@@ -12,7 +12,7 @@ locals {
     mysql_sg_id = data.aws_ssm_parameter.mysql_sg_id.value
     rabbitmq_sg_id = data.aws_ssm_parameter.rabbitmq_sg_id.value
     mysql_role_name = join("-", [
-            for name in ["${var.project}","${var.environment}", "mysql"] : title(name)
+            for name in ["${var.project}","${var.environment}", "mysql"] : title(name)  #Roboshop-Dev-Mysql
         ])
     mysql_policy_name = join("", [
             for name in ["${var.project}","${var.environment}", "mysql"] : title(name)
