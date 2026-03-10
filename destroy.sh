@@ -2,6 +2,13 @@
 
 set -e
 
+echo "Destroying Backend alb's..."
+cd 50-databases
+terraform destroy -auto-approve
+echo "Remaining resources:"
+terraform state list || echo "No resources left"
+cd ..
+
 echo "Destroying Databases..."
 cd 40-databases
 terraform destroy -auto-approve
