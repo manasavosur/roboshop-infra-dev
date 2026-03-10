@@ -2,7 +2,7 @@
 
 set -e
 
-for dir in 00-vpc 10-sg 20-sg-rules 30-bastion 40-databases
+for dir in 00-vpc 10-sg 20-sg-rules 30-bastion 
 do
   echo "Applying Terraform in $dir..."
   cd $dir
