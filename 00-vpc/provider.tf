@@ -7,7 +7,7 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "daws-88s-s3-dev" 
+    bucket = "daws-88s-s3-dev-01" 
     key     = "roboshop-dev-vpc"
     region  = "us-east-1"
     encrypt = true
