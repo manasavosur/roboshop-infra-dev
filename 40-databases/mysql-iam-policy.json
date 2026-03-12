@@ -4,7 +4,7 @@
     {
       "Effect": "Allow",
       "Action": "ssm:GetParameter",
-      "Resource": "arn:aws:ssm:us-east-1:520043870001:parameter/roboshop/${environment}/mysql_root_password"
+      "Resource": "arn:aws:ssm:us-east-1:944765969005:parameter/roboshop/${environment}/mysql_root_password"
     },
     {
       "Effect": "Allow",
