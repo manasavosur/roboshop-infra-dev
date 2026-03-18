@@ -19,4 +19,4 @@ After that, re-run `terraform apply` in the folder where it failed.
 **Note (Real Companies):**
 This issue usually does **not happen in companies** because engineers access infrastructure through **VPN, corporate static IPs, bastion gateways managed centrally, or tools like AWS Systems Manager**
 
-![Roboshop Architecture](images/roboshop-infra-dev.png)
+![Roboshop Architecture](images/roboshop-infra-dev)
