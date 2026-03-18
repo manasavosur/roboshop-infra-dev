@@ -2,6 +2,22 @@
 
 set -e
 
+echo "Destroying frontend alb..."
+cd 80-frontend-alb
+terraform init -reconfigure
+terraform destroy -auto-approve
+echo "Remaining resources:"
+terraform state list || echo "No resources left"
+cd ..
+
+echo "Destroying acm..."
+cd 70-acm
+terraform init -reconfigure
+terraform destroy -auto-approve
+echo "Remaining resources:"
+terraform state list || echo "No resources left"
+cd ..
+
 echo "Destroying catalogue..."
 cd 60-catalogue
 terraform init -reconfigure
