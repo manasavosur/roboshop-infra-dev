@@ -307,6 +307,17 @@ resource "aws_security_group_rule" "frontend_alb_frontend" {
   security_group_id = local.frontend_sg_id
 }
 
+#frontend should accept traffic from bastion on port 22
+resource "aws_security_group_rule" "frontend_bastion" {
+  type              = "ingress"
+  from_port         = 22
+  to_port           = 22
+  protocol          = "tcp"
+  # Where traffic is coming from
+  source_security_group_id = local.bastion_sg_id
+  security_group_id = local.frontend_sg_id
+}
+
 #frontend alb
 resource "aws_security_group_rule" "frontend_alb_public" {
   type              = "ingress"
