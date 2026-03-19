@@ -2,6 +2,14 @@
 
 set -e
 
+echo "Destroying backend components..."
+cd 90-components
+terraform init -reconfigure
+terraform destroy -auto-approve
+echo "Remaining resources:"
+terraform state list || echo "No resources left"
+cd ..
+
 echo "Destroying frontend alb..."
 cd 80-frontend-alb
 terraform init -reconfigure
