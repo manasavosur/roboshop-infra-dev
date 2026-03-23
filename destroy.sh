@@ -2,6 +2,14 @@
 
 set -e
 
+echo "Destroying cdn..."
+cd 95-cdn
+terraform init -reconfigure
+terraform destroy -auto-approve
+echo "Remaining resources:"
+terraform state list || echo "No resources left"
+cd ..
+
 echo "Destroying backend components..."
 cd 90-components
 terraform init -reconfigure
