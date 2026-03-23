@@ -11,7 +11,7 @@ set -e
 
 #ssh to bastion and run terraform init and apply for 40-databases manually as they are using private ips
 
-Continue rest
+# Continue rest
 for dir in 50-backend-alb 70-acm 80-frontend-alb
 do
   echo "Applying $dir..."
