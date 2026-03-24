@@ -351,7 +351,7 @@ resource "aws_security_group_rule" "openvpn_public_943" {
   security_group_id = local.openvpn_sg_id
 }
 
-#Admin UI
+
 resource "aws_security_group_rule" "backend_alb_openvpn" {
   type              = "ingress"
   from_port         = 80
